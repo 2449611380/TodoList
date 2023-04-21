@@ -6,13 +6,14 @@ body{
 }
 
 .App{
-    width: 700px;
-    height: 450px;
+    width: 800px;
+    height: 480px;
     position: absolute;
     left: 50%;
     top: 65%;
     transform: translate(-50%,-65%);
-    /* background-color: red; */
+    border-radius: 40px;
+    background-color: rgb(177,201,203);
 }
 
 .App .Logo{
