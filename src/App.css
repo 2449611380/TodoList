@@ -1,0 +1,37 @@
+body{
+    background-image: url('../public/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -80px;
+}
+
+.App{
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%,-65%);
+    /* background-color: red; */
+}
+
+.App .Logo{
+    width: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -250px;
+    animation: FloatAnimate linear infinite 3s;
+}
+
+@keyframes FloatAnimate {
+    0%{
+        top: -250px;
+    }
+    50%{
+        top: -270px;
+    }
+    100%{
+        top: -250px;
+    }
+}
