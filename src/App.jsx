@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Animation } from "./Component/Animation/Animation";
+import { InputBlock } from "./Component/InputBlock/InputBlock";
 
 export class App extends React.Component{
   render(){
@@ -10,7 +11,7 @@ export class App extends React.Component{
         <Animation />
         
         <div>
-          
+          <InputBlock />
         </div>
       </div>
     )
