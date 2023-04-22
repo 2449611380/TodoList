@@ -5,14 +5,16 @@ export class AddTodos extends React.Component{
     constructor(props){
         super(props);
         console.log('this is addTodos');
-        this.props.AddTodos();
-        
+        // this.props.AddTodos();
+        // console.log(this.props.data);
+
     }
     state = {
         content:'',
         dateTime:'',
         grouping:'默认分组',
         complete: true,
+        Groupings: this.props.newGroupings,
     }
     handleChange = (e) => {
         const target = e.target;
@@ -59,11 +61,14 @@ export class AddTodos extends React.Component{
                 <div className="grouping">
                     选择分组：
                     <select name="grouping" onClick={this.handleChange}>
-                        <option value="默认分组">默认分组</option>
-                        <option value="我爱你">我爱你</option>
+                        {
+                            [...new Set(this.state.Groupings)].map((item, index) => {
+                                return <option key={index} value={item}>{item}</option>
+                            })
+                        }
                     </select>
                 </div>
-        </div>
+            </div>
         )
     }
 }

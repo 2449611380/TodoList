@@ -8,8 +8,8 @@ export class Tabulation extends React.Component{
         console.log('this is Tabulation');
     }
     state = {
-        tabulation: "今日",
-        newGrouping: []
+        tabulation: "所有",
+        Groupings: this.props.newGroupings,
     }
     render(){
         return(
@@ -22,8 +22,11 @@ export class Tabulation extends React.Component{
                     <li>
                         当前列表/{this.state.tabulation} 筛选：
                         <select>
-                            <option value="默认分组">默认分组</option>
-                            <option value="我爱你">我爱你</option>
+                            {
+                                [...new Set(this.state.Groupings)].map((item, index) => {
+                                    return <option key={index} value={item}>{item}</option>
+                                })
+                            }
                         </select>
                     </li>
                 </ul>
@@ -62,6 +65,7 @@ export class Tabulation extends React.Component{
         this.setState({
             tabulation: name,
         });
+        this.props.ClassificationData(name);
     }
     DelTodos = (index, id) => {
         this.props.DelTodos(index, id)
