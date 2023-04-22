@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Animation } from "./Component/Animation/Animation";
 import { AddTodos } from "./Component/addTodos/addTodos";
+import { Tabulation } from "./Component/Tabulation/Tabulation";
 import "./App.css";
 
 export class App extends React.Component{
@@ -24,7 +25,8 @@ export class App extends React.Component{
 
         <div className="center">
           <AddTodos />
-
+      
+          <Tabulation />
         </div>
       </div>
     )

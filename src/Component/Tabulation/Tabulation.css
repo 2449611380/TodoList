@@ -1,0 +1,99 @@
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Tabulation{
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+}
+
+.Tabulation .table{
+    width: 100%;
+    height: 23px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13.5px;
+    padding-left: 10px;
+}
+
+.table li{
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.table li:nth-last-child(1){
+    width: 280px;
+}
+
+.Tabulation .todolist{
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+}
+
+.Tabulation .todolist li{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 40px;
+    margin:10px 0 10px 0;
+}
+
+.list_control{
+    width: 0;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin: -37px 0 0 80px;
+    overflow: hidden;
+    transition: .4s;
+    opacity: 0;
+}
+
+.Tabulation .todolist li:hover .list_control{
+    width: 300px;
+    height: 35px;
+    margin: -37px 0 0 150px;
+    opacity: 1;
+}
+
+.list_control button{
+    width: 30%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+    color: white;
+}
+
+.list_control button:hover{
+    border: 1px solid black !important;
+}
+
+.list_control button:nth-child(1){
+    background-color: #06b100;
+    border: 1px solid #06b100;
+}
+
+.list_control button:nth-child(2){
+    background-color: #00bbff;
+    border: 1px solid #00bbff;
+}
+
+.list_control button:nth-child(3){
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.todolist h2{
+    width: 100%;
+    text-align: center;
+}
