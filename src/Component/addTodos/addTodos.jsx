@@ -12,6 +12,7 @@ export class AddTodos extends React.Component{
         content:'',
         dateTime:'',
         grouping:'默认分组',
+        complete: true,
     }
     handleChange = (e) => {
         const target = e.target;
@@ -44,7 +45,7 @@ export class AddTodos extends React.Component{
     }
     addTodos = () => {
         if(this.state.content === '' || this.state.dateTime === '' || this.state.grouping === '') return alert('请输入待办事项，待办时间，和分组');
-        this.props.AddTodos(this.state.content, this.state.dateTime, this.state.grouping);
+        this.props.AddTodos(this.state.content, this.state.dateTime, this.state.grouping, this.state.complete);
     }
     render(){
         return (
@@ -59,6 +60,7 @@ export class AddTodos extends React.Component{
                     选择分组：
                     <select name="grouping" onClick={this.handleChange}>
                         <option value="默认分组">默认分组</option>
+                        <option value="我爱你">我爱你</option>
                     </select>
                 </div>
         </div>

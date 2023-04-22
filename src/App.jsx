@@ -12,6 +12,8 @@ export class App extends React.Component{
     // 默认获取全部数据 
     axios.get('http://localhost/api/all')
     .then(res => {
+      if(res.data.length === 0) return;
+      
       this.setState({
         data: res.data
       })
@@ -33,9 +35,8 @@ export class App extends React.Component{
       </div>
     )
   }
-  AddTodos = (content, dateTime, grouping) =>{
-    if(content === undefined && dateTime === undefined && grouping === undefined) return;
-    
+  AddTodos = (content, dateTime, grouping, complete) =>{
+    if(content === undefined && dateTime === undefined && grouping === undefined && complete === undefined) return;
     const todos = [...this.state.data, {content: content, date:dateTime, grouping: grouping}];
     
     this.setState({
@@ -46,6 +47,7 @@ export class App extends React.Component{
       content:content,
       date:dateTime,
       grouping:grouping,
+      complete:complete
     });
   }
   DelTodos = (index, id) => {

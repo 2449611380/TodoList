@@ -81,17 +81,17 @@ ul{
     border: 1px solid black !important;
 }
 
-.list_control button:nth-child(1){
-    background-color: #06b100;
-    border: 1px solid #06b100;
-}
-
-.list_control button:nth-child(2){
+.list_control button:nth-child(1),.list_control button:nth-child(2){
     background-color: #00bbff;
     border: 1px solid #00bbff;
 }
 
 .list_control button:nth-child(3){
+    background-color: #06b100;
+    border: 1px solid #06b100;
+}
+
+.list_control button:nth-child(4){
     background-color: #ff0000;
     border: 1px solid #ff0000;
 }
@@ -99,4 +99,28 @@ ul{
 .todolist h2{
     width: 100%;
     text-align: center;
+}
+
+.list_edit{
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    opacity: .8;
+    border-radius: 40px;
+    display: none;
+}
+
+.list_edit button{
+    height: 20px;
+    cursor: pointer;
+}
+
+.list_edit input{
+    width: 200px;
+    border: 1px solid #000;
+    padding-left: 20px;
 }

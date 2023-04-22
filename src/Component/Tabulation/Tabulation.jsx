@@ -22,8 +22,8 @@ export class Tabulation extends React.Component{
                     <li>
                         当前列表/{this.state.tabulation} 筛选：
                         <select>
-                            <option value="全部分组">全部分组</option>
                             <option value="默认分组">默认分组</option>
+                            <option value="我爱你">我爱你</option>
                         </select>
                     </li>
                 </ul>
@@ -31,14 +31,25 @@ export class Tabulation extends React.Component{
                 <ul className="todolist">
                     {
                         this.props.data.map((item,index) => {
-                            if(item.content === "暂无数据") return <h2 key={index}>暂无数据...</h2>;
-                            return <li key={index}>
+                            if(item.content === "暂无数据...") return <h2 key={index}>暂无数据...</h2>;
+                            return <li style={{textDecoration:item.complete === 0 ? 'line-through' : ''}} key={index}>
                                 {item.content} | {item.date} | {item.grouping}
                                 <div className="list_control">
-                                    <button>完成</button>
+                                    <button style={{display: item.complete === 0 ? "none" : ""}} >完成</button>
+                                    <button style={{display: item.complete === 1 ? "none" : ""}} >取消</button>
                                     <button>编辑</button>
                                     <button onClick={() => this.DelTodos(index, item.id)}>删除</button>
-                                    
+                                </div>
+
+                                <div className="list_edit">
+                                    <h1>待办编辑</h1>
+                                    更改事项：<input placeholder="待办" type="text" />
+                                    <br />
+                                    更改时间：
+                                    <input type="datetime-local" />
+                                    <br />
+                                    <button onClick={()=>{console.log('123')}}>确认修改</button>
+                                    <button onClick={()=>{console.log('321')}}>取消</button>
                                 </div>
                             </li>
                         })
