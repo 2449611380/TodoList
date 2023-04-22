@@ -1,20 +1,14 @@
 import React from "react";
-import "./App.css";
+import axios from "axios";
 import { Animation } from "./Component/Animation/Animation";
-import { InputBlock } from "./Component/InputBlock/InputBlock";
-import { Tabulation } from "./Component/Tabulation/Tabulation";
+import "./App.css";
 
 export class App extends React.Component{
   render(){
-    return(
+    return (
       <div className="App">
-        <img src="./logo.png" alt="logo" className="Logo" />
         <Animation />
-        
-        <div className="center">
-          <InputBlock />
-          <Tabulation />
-        </div>
+        <img src="./logo.png" className="Logo" alt="logo" />
       </div>
     )
   }

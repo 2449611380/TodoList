@@ -10,8 +10,8 @@ body{
     height: 480px;
     position: absolute;
     left: 50%;
-    top: 65%;
-    transform: translate(-50%,-65%);
+    top: 55%;
+    transform: translate(-50%,-55%);
     border-radius: 40px;
     background-color: rgb(177,201,203);
 }
@@ -30,7 +30,7 @@ body{
         top: -250px;
     }
     50%{
-        top: -270px;
+        top: -260px;
     }
     100%{
         top: -250px;
